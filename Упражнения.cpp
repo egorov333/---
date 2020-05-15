@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include <iostream>
 #include <string>
 #include <random>
@@ -91,4 +91,31 @@ void main()
 		cout << Ny << ' ' << (float)Ny / N << endl; // отношение успешных испытаний ко всем
 	}
 
+	if (number == 3) {
+		cout << "¯\_(ツ)_/¯" << endl;
+	}
+
+	if (number == 4) {  // неработает while
+		int k1, k = 1; // баланс игрока
+		int A[2] = { -1, 1 };
+		uniform_int_distribution<> distribution(0, 1);
+		int c, n; // случайное число, кол-во испытаний
+		cout << "vvedite kol-vo ispitaniy: ";
+		cin >> n;
+
+		for (int i = 0; i < n; i++) {
+			k1 = k;
+			while (k1 == 0 || k1 == 10) {
+				c = distribution(generator);
+				k1 += A[c];
+				cout << k1 << endl;
+			}
+			if (k1 == 0) { cout << "Lose" << endl; continue; }
+			else if (k1 == 10) { cout << "Win" << endl; continue; }
+		}
+	}
+
+	if (number == 5) {
+
+	}
 }
